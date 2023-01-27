@@ -1,0 +1,110 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "maintenanceConfigurationName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of maintenance configuration, for example: 'Windows-Critical-and-Security-Ring-1'"
+            }
+        },
+        "maintenanceScope": {
+            "type": "string",
+            "metadata": {
+                "description": "Scope of maintenance"
+            },
+            "allowedValues": [
+                "Extension",
+                "Host",
+                "InGuestPatch",
+                "OSImage",
+                "Resource",
+                "SQLDB",
+                "SQLManagedInstance"
+            ],
+            "defaultValue": "InGuestPatch"
+        },
+        "startDateTime": {
+            "type": "string",
+            "metadata": {
+                "description": "Start date and time for maintenance, in format: 2023-01-27 22:00"
+            },
+            "defaultValue": "2023-01-27 22:00"
+        },
+        "expirationDateTime": {
+            "type": "string",
+            "metadata": {
+                "description": "Expiration date and time for maintenance, in format: 2023-01-27 22:00"
+            }
+        },
+        "duration": {
+            "type": "string",
+            "metadata": {
+                "description": "Duration in hours and minutes, format '03:55' - maximum 3 hours 59 minutes"
+            }
+        },
+        "windowsClassifications": {
+            "type": "array",
+            "metadata": {
+                "description": "Select the classifications to include in update management"
+            },
+            "allowedValues": [  
+                "Critical",
+                "Security",
+                "UpdateRollup",
+                "Definition"
+            ]
+        },
+        "rebootSetting": {
+            "type": "string",
+            "metadata": {
+                "description": "Reboot after update"
+            },
+            "allowedValues": [
+                "Always",
+                "IfRequired",
+                "Never"
+            ],
+            "defaultValue": "IfRequired"
+        },
+        "recurEvery": {
+            "type": "string",
+            "metadata": {
+                "description": "Maintenance recurrence, for example every month, 3 days after the 2nd Tuesday: '1Month Second Tuesday Offset3'"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Maintenance/maintenanceConfigurations",
+            "apiVersion": "2022-07-01-preview",
+            "name": "[parameters('maintenanceConfigurationName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {},
+            "dependsOn": [],
+            "properties": {
+                "extensionProperties": {},
+                "installPatches": {
+                    "linuxParameters": {},
+                    "windowsParameters": {
+                        "classificationsToInclude": "[parameters('windowsClassifications')]"
+                    },
+                    "rebootSetting": "[parameters('rebootSetting')]",
+                    "tasks": {}
+                },
+                "maintenanceScope": "[parameters('maintenanceScope')]",
+                "maintenanceWindow": {
+                    "startDateTime": "[parameters('startDateTime')]",
+                    "expirationDateTime": "[parameters('expirationDateTime')]",
+                    "duration": "[parameters('duration')]",
+                    "timeZone": "Romance Standard Time",
+                    "recurEvery": "[parameters('recurEvery')]"
+                },
+                "visibility": "Custom"
+            }
+        }
+    ],
+    "outputs": {}
+}

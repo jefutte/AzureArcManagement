@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "maintenanceConfigurationName": {
+            "value": "Windows-Critical-and-Security-Ring-1"
+        },
+        "maintenanceScope": {
+            "value": "InGuestPatch"
+        },
+        "startDateTime": {
+            "value": "2023-01-27 22:00"
+        },
+        "expirationDateTime": {
+            "value": ""
+        },
+        "duration": {
+            "value": "03:55" 
+        },
+        "windowsClassifications": {
+            "value": [
+                "Critical",
+                "Security",
+                "UpdateRollup",
+                "Definifion"
+            ]
+        },
+        "rebootSetting": {
+            "value": "IfRequired"
+        },
+        "recurEvery": {
+            "value": "1Month Second Tuesday Offset3"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "properties": {
+        "displayName": "Schedule recurring updates using Update Management Center - Ring 1",
+        "description": "",
+        "metadata": {
+            "assignedBy": "Cloud Center of Excellence"
+        },
+        "enforcementMode": "DoNotEnforce",
+        "notScopes": [],
+        "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/ba0df93e-e4ac-479a-aac2-134bbae39a1a",
+        "nonComplianceMessages": [
+            {
+                "message": ""
+            }
+        ],
+        "parameters": {
+            "maintenanceConfigurationResourceId": {
+                "value": ""
+            },
+            "resourceGroups": {
+                "value": []
+            },
+            "operatingSystemTypes": {
+                "value": [
+                    "Windows",
+                    "Linux"
+                ]
+            },
+            "locations": {
+                "value": []
+            },
+            "tagValues": {
+                "value": [{"key":"UpdateRing","value":"Ring1"}]
+            },
+            "tagOperator": {
+                "value": "Any"
+            },
+            "effect": {
+                "value": "DeployIfNotExists"
+            }
+        },
+        "identity": {
+            "type": "SystemAssigned"
+        },
+        "resourceSelectors": [],
+        "overrides": []
+    }
+}
