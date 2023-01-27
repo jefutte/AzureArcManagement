@@ -38,4 +38,4 @@ jobs:
       with: 
         resourceGroupName: ${{ steps.deployRG.outputs.rgName }}
         template: updateManagement/maintenanceConfiguration.json
-        parameter: updateManagement/maintenanceConfiguration.params.json
+        parameters: updateManagement/maintenanceConfiguration.params.json
