@@ -26,5 +26,10 @@
             "tags": {}
         }
     ],
-    "outputs": {}
+    "outputs": {
+      "rgName": {
+        "type": "string",
+        "value": "[parameters('rgName')]"
+      }
+    }
 }
