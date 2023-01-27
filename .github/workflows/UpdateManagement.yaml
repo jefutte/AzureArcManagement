@@ -23,7 +23,8 @@ jobs:
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
 
-    - name: DeployRG
+    - name: Deploy RG
+      id: deployRG
       uses: azure/arm-deploy@v1
       with:
         scope: subscription
@@ -32,8 +33,9 @@ jobs:
         parameters: resourceGroup/rg.params.json
 
     - name: Deploy Maintenance Configuration
+      id: deployMaintenanceConfiguration
       uses: azure/arm-deploy@v1
       with: 
-        resourceGroupName: ${{ steps.DeployRG.outputs.rgName }}
+        resourceGroupName: ${{ steps.deployRG.outputs.rgName }}
         template: updateManagement/maintenanceConfiguration.json
         parameter: updateManagement/maintenanceConfiguration.params.json
