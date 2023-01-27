@@ -47,13 +47,7 @@
             "type": "array",
             "metadata": {
                 "description": "Select the classifications to include in update management"
-            },
-            "allowedValues": [  
-                "Critical",
-                "Security",
-                "UpdateRollup",
-                "Definition"
-            ]
+            }
         },
         "rebootSetting": {
             "type": "string",
