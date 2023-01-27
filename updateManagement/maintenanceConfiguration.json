@@ -83,17 +83,17 @@
                 "installPatches": {
                     "linuxParameters": {},
                     "windowsParameters": {
-                        "classificationsToInclude": "[parameters('windowsClassifications')]"
+                        "classificationsToInclude": [
+                            "Critical",
+                            "Security",
+                            "UpdateRollup",
+                            "Definifion"
+                        ]
                     },
                     "rebootSetting": "[parameters('rebootSetting')]",
                     "tasks": {}
                 },
-                "maintenanceScope": [  
-                    "Critical",
-                    "Security",
-                    "UpdateRollup",
-                    "Definifion"
-                ],
+                "maintenanceScope": "[parameters('maintenanceScope')]",
                 "maintenanceWindow": {
                     "startDateTime": "[parameters('startDateTime')]",
                     "expirationDateTime": "[parameters('expirationDateTime')]",
