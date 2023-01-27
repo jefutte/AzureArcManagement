@@ -88,7 +88,12 @@
                     "rebootSetting": "[parameters('rebootSetting')]",
                     "tasks": {}
                 },
-                "maintenanceScope": "[parameters('maintenanceScope')]",
+                "maintenanceScope": [  
+                    "Critical",
+                    "Security",
+                    "UpdateRollup",
+                    "Definifion"
+                ],
                 "maintenanceWindow": {
                     "startDateTime": "[parameters('startDateTime')]",
                     "expirationDateTime": "[parameters('expirationDateTime')]",

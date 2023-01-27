@@ -18,12 +18,7 @@
             "value": "03:55" 
         },
         "windowsClassifications": {
-            "value": [
-                "Critical",
-                "Security",
-                "UpdateRollup",
-                "Definifion"
-            ]
+            "value": []
         },
         "rebootSetting": {
             "value": "IfRequired"
