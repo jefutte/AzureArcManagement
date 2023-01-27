@@ -20,7 +20,7 @@
     "resources": [
         {
             "type": "Microsoft.Resources/resourceGroups",
-            "apiVersion": "2022-12-01",
+            "apiVersion": "2022-09-01",
             "location": "[parameters('location')]",
             "name": "[parameters('rgName')]",
             "tags": {}
