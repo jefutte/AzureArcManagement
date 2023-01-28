@@ -1,0 +1,33 @@
+{
+    "location": "westeurope",
+    "properties": {
+        "namespace": null,
+        "extensionProperties": {
+            "InGuestPatchMode" : "User"
+        },
+        "maintenanceScope": "InGuestPatch",
+        "maintenanceWindow": {
+            "startDateTime": "2023-08-21 01:18",
+            "expirationDateTime": "2221-05-19 03:30",
+            "duration": "01:30",
+            "timeZone": "India Standard Time",
+            "recurEvery": "Day"
+        },
+        "visibility": "Custom",
+        "installPatches": {
+            "rebootSetting": "IfRequired",
+            "windowsParameters": {
+                "classificationsToInclude": [
+                    "Security",
+                    "Critical",
+                    "UpdateRollup"
+                ]
+            },
+            "linuxParameters": {
+                "classificationsToInclude": [
+                    "Other"
+                ]
+            }
+        }
+    }
+}
