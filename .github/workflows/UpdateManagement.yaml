@@ -36,4 +36,5 @@ jobs:
       uses: azure/arm-deploy@v1
       with: 
         resourceGroupName: ${{ steps.deployRG.outputs.rgName }}
-        template: updateManagement/config.json
+        template: updateManagement/maintenanceConfiguration.json
+        parameters: updateManagement/maintenanceConfiguration.params.json
