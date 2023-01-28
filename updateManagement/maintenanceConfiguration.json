@@ -79,14 +79,14 @@
             "tags": {},
             "dependsOn": [],
             "properties": {
-                "namespace": "null",
+                "namespace": null,
                 "extensionProperties": {
                     "InGuestPatchMode": "User"
                 },
                 "installPatches": {
                     "linuxParameters": {},
                     "windowsParameters": {
-                        "classificationsToInclude": ["[parameters('windowsClassifications')]"]
+                        "classificationsToInclude": "[parameters('windowsClassifications')]"
                     },
                     "rebootSetting": "[parameters('rebootSetting')]",
                     "tasks": {}
