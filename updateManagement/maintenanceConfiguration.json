@@ -29,7 +29,7 @@
             "metadata": {
                 "description": "Start date and time for maintenance, in format: 2023-01-27 22:00"
             },
-            "defaultValue": "2023-01-27 22:00"
+            "defaultValue": "2023-05-28 22:00"
         },
         "expirationDateTime": {
             "type": "string",
@@ -79,6 +79,7 @@
             "tags": {},
             "dependsOn": [],
             "properties": {
+                "namespace": "null",
                 "extensionProperties": {
                     "InGuestPatchMode": "User"
                 },
