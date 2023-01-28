@@ -79,16 +79,13 @@
             "tags": {},
             "dependsOn": [],
             "properties": {
-                "extensionProperties": {},
+                "extensionProperties": {
+                    "InGuestPatchMode": "User"
+                },
                 "installPatches": {
                     "linuxParameters": {},
                     "windowsParameters": {
-                        "classificationsToInclude": [
-                            "Critical",
-                            "Security",
-                            "UpdateRollup",
-                            "Definifion"
-                        ]
+                        "classificationsToInclude": ["[parameters('windowsClassifications')]"]
                     },
                     "rebootSetting": "[parameters('rebootSetting')]",
                     "tasks": {}
