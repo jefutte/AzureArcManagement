@@ -31,10 +31,17 @@ jobs:
         template: resourceGroup/rg.json
         parameters: resourceGroup/rg.params.json
 
-    - name: Deploy Maintenance Configuration
+    - name: Deploy Maintenance Configuration - Windows Security and Critical Ring 1
       id: deployMaintenanceConfiguration
       uses: azure/arm-deploy@v1
       with: 
         resourceGroupName: ${{ steps.deployRG.outputs.rgName }}
         template: updateManagement/maintenanceConfiguration.json
-        parameters: updateManagement/maintenanceConfiguration.params.json
+        parameters: updateManagement/WindowsCriticalSecurityRing1.params.json
+
+    - name: Deploy Maintenance Configuration - Windows Security and Critical Ring 2
+      id: deployMaintenanceConfigurationRing2
+      uses: azure/arm-deploy@v1
+      with: 
+        resourceGroupName: ${{ steps.deployRG.outputs.rgName }}
+        template: updateManagement/maintenanceConfiguration.bicep
