@@ -1,6 +1,9 @@
 @description('Name of maintenance configuration, for example: \'Windows-Critical-and-Security-Ring-1\'')
 param maintenanceConfigurationName string = 'Windows-Critical-and-Security-Ring-2'
 
+@description('Location')
+param location string = resourceGroup().location
+
 @description('Scope of maintenance')
 @allowed([
   'Extension'
@@ -43,7 +46,7 @@ param recurEvery string = '1Month Third Tuesday Offset3'
 
 resource maintenanceConfiguration 'Microsoft.Maintenance/maintenanceConfigurations@2022-07-01-preview' = {
   name: maintenanceConfigurationName
-  location: resourceGroup().location
+  location: location
   tags: {
   }
   properties: {
