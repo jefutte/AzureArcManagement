@@ -20,7 +20,7 @@ param maintenanceScope string = 'InGuestPatch'
 param startDateTime string = '2023-05-28 22:00'
 
 @description('Expiration date and time for maintenance, in format: 2023-01-27 22:00')
-param expirationDateTime string
+param expirationDateTime string = '2223-05-28 22:00'
 
 @description('Duration in hours and minutes, format \'03:55\' - maximum 3 hours 59 minutes')
 param duration string = '03:55'
